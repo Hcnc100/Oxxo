@@ -45,18 +45,21 @@ const validateCode = async (req, res) => {
         });
     }
 
-    res.json(
+    return res.json(
         {
             "autorizacionDetalle": {
                 "autorizado": true,
                 "clienteId": 1,
                 "codigoAutorizacion": 12345,
                 "mensaje": "Autorizado",
-                "montoAutorizado": 100.0,
+                // * montoAutorizado: 1000.0 -> Monto autorizado	
+                "montoAutorizado": 1000.0,
                 "nip": "",
-                "productoAutorizado": "Producto",
+                // * productoAutorizado: "1 2 9" -> 1: Magna, 2: Premium, 9: Diesel
+                "productoAutorizado": "1 2 9",
                 "tarjetaId": 1,
-                "tipoAutorizacion": "Tipo",
+                // * tipoAutorizacion: "IMPORTE" o "LITROS"
+                "tipoAutorizacion": "IMPORTE",
                 "ultimaCarga": 1,
                 "ultimoOdometro": 1
             },
